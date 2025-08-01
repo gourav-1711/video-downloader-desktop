@@ -1,0 +1,85 @@
+{
+  "name": "yt-downloader-desktop",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": {
+    "name": "Gaurav",
+    "description": "A cross-platform downloader that can download from websites like youtube and instagram using yt-dlp"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gaurav-1711/yt-downloader-desktop.git"
+  },
+  "scripts": {
+    "dev": "concurrently \"node backend/server.js\" \"cd frontend && npm run dev\" \"wait-on http://localhost:5173 && electron .\"",
+    "dev:backend": "node backend/server.js",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:electron": "wait-on http://localhost:5173 && electron .",
+    "build": "cd frontend && npm install && npm run build  && cd .. && electron-builder"
+  },
+  "build": {
+    "copyright": "Copyright © 2025 Gaurav",
+    "companyName": "Gaurav Devs",
+    "legalTrademarks": "YT Downloader™",
+    "appId": "com.yt.downloader",
+    "productName": "YT Downloader",
+    "files": [
+      "main.js",
+      "preload.js",
+      "backend/**/*",
+      "frontend/public/**/*",
+      "frontend/dist/**/*",
+      "icons/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "backend/bin/",
+        "to": "backend/bin",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "icons/main-icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "icons/main-icon.ico",
+      "uninstallerIcon": "icons/main-icon.ico",
+      "installerHeaderIcon": "icons/main-icon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "YT Downloader"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.15",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^8.0.1",
+    "electron": "^29.0.0",
+    "electron-builder": "^24.13.3",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
+    "wait-on": "^7.0.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
