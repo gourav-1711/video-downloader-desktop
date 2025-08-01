@@ -15,9 +15,7 @@ yt-downloader-desktop/
 1. 🔧 Install Dependencies
 Install Node packages in both frontend/ and backend/ folders:
 
-bash
-Copy
-Edit
+
 # Install backend dependencies
 cd backend
 npm install
@@ -29,9 +27,7 @@ npm install
 This project uses yt-dlp and ffmpeg binaries to handle YouTube video/audio downloads.
 
 📁 Folder Structure Required:
-bash
-Copy
-Edit
+
 backend/
 └── bin/
     └── win/
@@ -49,10 +45,8 @@ https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip
 
 Put both .exe files in:
 
-bash
-Copy
-Edit
 backend/bin/win/
+
 🚀 Running & Building the App
 ▶️ Run in Dev Mode
 bash
@@ -68,9 +62,7 @@ Start the frontend
 Launch the Electron app in development mode
 
 🏗️ Build Desktop Installer (.exe / Setup)
-bash
-Copy
-Edit
+
 npm run build
 This will:
 
@@ -92,18 +84,11 @@ MIT – use it, remix it, just don’t resell it as-is.
 
 💬 Credits
 Built with ❤️ using:
+1 yt-dlp
+2 ffmpeg
+3 Electron
+4 React + Vite
+5 Node.js + Express
 
-yt-dlp
 
-ffmpeg
-
-Electron
-
-React + Vite
-
-Node.js + Express
-
-yaml
-Copy
-Edit
 
