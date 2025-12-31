@@ -1,0 +1,21 @@
+{
+  "appId": "com.yt.downloader",
+  "productName": "4k video downloader",
+  "files": [
+    "main.js",
+    "backend/**/*",
+    "frontend/out/**/*"
+  ],
+  "directories": {
+    "output": "dist"
+  },
+  "win": {
+    "target": "nsis"
+  },
+  "linux": {
+    "target": "AppImage"
+  },
+  "mac": {
+    "target": "dmg"
+  }
+}
